@@ -1,0 +1,48 @@
+/*
+ * Copyright 2010 MontaVista Software, LLC.
+ *
+ * Author: Anton Vorontsov <avorontsov@ru.mvista.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef _DRIVERS_MMC_SDHCI_PLTFM_H
+#define _DRIVERS_MMC_SDHCI_PLTFM_H
+
+#include <linux/clk.h>
+#include <linux/types.h>
+#include <linux/platform_device.h>
+#include <linux/mmc/sdhci.h>
+
+struct sdhci_pltfm_data {
+	struct sdhci_ops *ops;
+	unsigned int quirks;
+};
+
+struct sdhci_pltfm_host {
+	struct clk *clk;
+	void *priv; /* to handle quirks across io-accessor calls */
+
+	/* migrate from sdhci_of_host */
+	//unsigned int clock; NOT FOR WII
+	//u16 xfer_mode_shadow; NOT FOR WII
+};
+
+extern struct sdhci_host *sdhci_pltfm_init(struct platform_device *pdev,
+					   struct sdhci_pltfm_data *pdata);
+extern void sdhci_pltfm_free(struct platform_device *pdev);
+
+extern int sdhci_pltfm_register(struct platform_device *pdev,
+				struct sdhci_pltfm_data *pdata);
+extern int sdhci_pltfm_unregister(struct platform_device *pdev);
+
+#ifdef CONFIG_PM
+extern const struct dev_pm_ops sdhci_pltfm_pmops;
+#define SDHCI_PLTFM_PMOPS (&sdhci_pltfm_pmops)
+#else
+#define SDHCI_PLTFM_PMOPS NULL
+#endif
+
+#endif /* _DRIVERS_MMC_SDHCI_PLTFM_H */
