@@ -2,9 +2,6 @@
 **_Linux kernel for GameCube/Wii/vWii_**
 ***
 
-This is still a work in progress but everything uploaded so far can now be seen in the various branches in this repository...  
-Eventually this repository will become stable once I have the branches uploaded and fixed and this message will be removed...  
-
 This is the GC/Wii Linux kernel branch.  Single branches of this repository can be downloaded by first selecting and following the instructions in the README.md in that branch.  A 
 full copy of this repository can be downloaded by using git to clone the full repository as shown below.
 
@@ -34,7 +31,7 @@ SEE THE BUG SECTION OF EACH BRANCH FOR MORE INFO
 **_General Information:_**  
 ***
 
-- Both IOS and MINI also still suffer from the same hardware limitations that they did in 2.6.32.z.  For example, wireless and disc support for Wii consoles is still limited to MINI mode.  Also, DVDs can be mounted as they were in version 2.6.32.z, but due to hardware limitations, it's unable to write to any disc and is unable to read CDs and certain types of DVD's
+- Both IOS and MINI also still suffer from the same hardware limitations that they did in 2.6.32.y.  For example, wireless and disc support for Wii consoles is still limited to MINI mode.  Also, DVDs can be mounted as they were in version 2.6.32.y, but due to hardware limitations, it's unable to write to any disc and is unable to read CDs and certain types of DVD's
     - Support for DVD-RW and DVD-DL disc seems to vary.  Currently, -R and +R (both mini & full-size) DVDs are know to work on both GameCube and Wii consoles.  All WiiU as well as some of the newer Wii disc drives, lack support for DVDs as they don't contain the same type of disc drive.  In other words, support will vary on the age of the console, but most standard GameCube consoles should be able to read mini DVDs (full-sized DVDs are too big for unmodified Gamecube consoles, but they can be read).
     - To mount a disc in a GameCube/Wii Linux distribution, try doing the following:
 
@@ -62,7 +59,7 @@ _(Cross) Compiling the Kernel:_
 
 <br>
 
-- A basic shell script was created to help in building the Kernel and should work on i386, X86_64, and PowerPC platforms.  To run this script, open a terminal and run (either "sh " or "./" followed by the name of the script):
+- A basic Linux shell script was created to help in building the kernel and should work with most CPU types.  To run this script, open a terminal and run (either "sh " or "./" followed by the name of the script):
 
 
 
@@ -108,7 +105,7 @@ Username: wii
 Password: delta  
 *Root password is the same (delta)  
 
-For those who are looking to create their own Debian setup and perfer an interactive GUI, take a look at Farter's blog in the link below:
+For those who are looking to create their own Debian setup and prefer an interactive GUI, take a look at Farter's blog in the link below:
 
 		http://fartersoft.com/blog/2011/08/17/debian-installer-for-wii/
 
