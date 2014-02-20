@@ -2,11 +2,22 @@
 **_Linux kernel for GameCube/Wii/vWii_**
 ***
 
-This is the GC/Wii Linux kernel branch.  Single branches of this repository can be downloaded by first selecting and following the instructions in the README.md in that branch.  A 
-full copy of this repository can be downloaded by using git to clone the full repository as shown below.
+This is the GC/Wii Linux kernel master branch.  Single branches of this repository can be downloaded by following the instructions in the README.md of any of the GC/Wii Linux branches.  To reduce
+the size of the download significantly, a shallow clone can be performed by adding " --depth 1" to the end of clone command, but this will make the history inaccessible and prevent pushing to the
+repository.  A full copy of this repository can be downloaded by using git to clone it.  Retrieving the entire repository is usually only needed for developing so it's
+recommended to only clone required branches rather the whole repository.  For those who require a copy of the whole repository, it can be retrieved by entering the following command:
 
     git clone https://github.com/DeltaResero/GC-Wii-Linux-Kernels.git
 
+<br>
+
+For those who are using a version of Git prior to 1.8.X on Debian/Ubuntu based operating systems should able to easily update to at least an 1.8.X version via ppa.  The alternative is to compile Git from source (https://github.com/git/git).  By default any Linux operating system prior to Debian 7 and Ubuntu 13.10 use a version of Git that will require updating.  For Debian based systems, use the following commands to update Git (assuming git is already installed):
+
+    sudo add-apt-repository ppa:pdoes/ppa
+    sudo apt-get update
+    sudo apt-get install git
+
+Check which version of git is installed with the command: "git --version".  
 <br>
 
 Compiling this kernel will has some dependencies that must be installed.  On a Debian based system, these dependecies can be installed by running the following command:
@@ -32,9 +43,8 @@ SEE THE BUG SECTION OF EACH BRANCH FOR MORE INFO
 ***
 
 - Both IOS and MINI also still suffer from the same hardware limitations that they did in 2.6.32.y.  For example, wireless and disc support for Wii consoles is still limited to MINI mode.  Also, DVDs can be mounted as they were in version 2.6.32.y, but due to hardware limitations, it's unable to write to any disc and is unable to read CDs and certain types of DVD's
-    - Support for DVD-RW and DVD-DL disc seems to vary.  Currently, -R and +R (both mini & full-size) DVDs are know to work on both GameCube and Wii consoles.  All WiiU as well as some of the newer Wii disc drives, lack support for DVDs as they don't contain the same type of disc drive.  In other words, support will vary on the age of the console, but most standard GameCube consoles should be able to read mini DVDs (full-sized DVDs are too big for unmodified Gamecube consoles, but they can be read).
-    - To mount a disc in a GameCube/Wii Linux distribution, try doing the following:
-
+- Support for DVD-RW and DVD-DL disc seems to vary.  Currently, -R and +R (both mini & full-size) DVDs are know to work on both GameCube and Wii consoles.  All WiiU as well as some of the newer Wii disc drives, lack support for DVDs as they don't contain the same type of disc drive.  In other words, support will vary on the age of the console, but most standard GameCube consoles should be able to read mini DVDs (full-sized DVDs are too big for unmodified Gamecube consoles, but they can be read).
+- To mount a disc in a GameCube/Wii Linux distribution, try doing the following:
 <br>
 
 Create a "dvd" folder (as root) in the "/media" directory (only if the folder doesn't exist) with the command:
