@@ -2,7 +2,7 @@
 **_Linux kernel for GameCube/Wii/vWii_**
 ***
 
-DUE TO UNFORSEEN CERCUMSTANCES, I WILL BE UNABLE TO MAINTAIN THIS ANY FURTHER.  I WILL ATTEMPT TO CLEAN UP WHAT'S HERE AND MAKE ONE FINALLY UPDATE IN THE FUTURE, BUT THAT'S THE BEST I CAN OFFER.
+DUE TO UNFORESEEN CIRCUMSTANCES, I WILL BE UNABLE TO MAINTAIN THIS ANY FURTHER.  I WILL ATTEMPT TO CLEAN UP WHAT'S HERE AND MAKE ONE FINAL UPDATE IN THE FUTURE, BUT THAT'S THE BEST I CAN OFFER.
 
 This is the GC/Wii Linux kernel master branch.  Single branches of this repository can be downloaded by following the instructions in the README.md of any of the GC/Wii Linux branches.  To reduce
 the size of the download significantly, a shallow clone can be performed by adding " --depth 1" to the end of clone command, but this will make the history inaccessible and prevent pushing to the
